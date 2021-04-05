@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from SlideShareDownloader import downloadSlides
+from . import SlideShareDownloader as ssd
 
 app = Flask(__name__)
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         BASE_URL= request.form['q-url']
-        downloadSlides(BASE_URL)
+        ssd.downloadSlides(BASE_URL)
         return "Downloaded File!"
     else:
         return render_template('index.html')
