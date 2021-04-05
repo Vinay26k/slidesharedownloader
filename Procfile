@@ -1,1 +1,1 @@
-web: gunicorn slidesharedownloader:app
+web: gunicorn slidesharedownloader.app:app
