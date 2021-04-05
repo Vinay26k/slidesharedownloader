@@ -27,3 +27,5 @@ def downloadSlides(BASE_URL, pdf_file_name=None):
     images_list = [Image.open(requests.get(images_links_list[each_image_index], stream=True).raw) for each_image_index in tqdm(range(len(images_links_list)))]
     # append all images to PDF file
     images_list[0].save(pdf_file_name, "PDF", resolution=100.0, save_all=True, append_images=images_list[1:])
+    # return filename
+    return pdf_file_name

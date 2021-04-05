@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from . import SlideShareDownloader as ssd
 
 app = Flask(__name__)
@@ -9,8 +9,8 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         BASE_URL= request.form['q-url']
-        ssd.downloadSlides(BASE_URL)
-        return "Downloaded File!"
+        fileName = "/"+ ssd.downloadSlides(BASE_URL)
+        return send_file(fileName, as_attachment=True)
     else:
         return render_template('index.html')
 
