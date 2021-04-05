@@ -1,5 +1,6 @@
+requests
+Pillow
 beautifulsoup4
 tqdm
 flask
 gunicorn
-requests
