@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 from tqdm import tqdm
+import os
 
 # code by github.com/Vinay26k
 
@@ -28,4 +29,4 @@ def downloadSlides(BASE_URL, pdf_file_name=None):
     # append all images to PDF file
     images_list[0].save(pdf_file_name, "PDF", resolution=100.0, save_all=True, append_images=images_list[1:])
     # return filename
-    return pdf_file_name
+    return os.getcwd()+"/"+pdf_file_name
