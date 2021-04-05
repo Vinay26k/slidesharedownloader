@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         BASE_URL= request.form['q-url']
-        fileName = "/"+ ssd.downloadSlides(BASE_URL)
+        fileName = ssd.downloadSlides(BASE_URL)
         return send_file(fileName, as_attachment=True)
     else:
         return render_template('index.html')
