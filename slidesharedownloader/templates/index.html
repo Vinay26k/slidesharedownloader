@@ -7,11 +7,13 @@
   <style>
     body {
       background-color: #3745c2;
-      margin: 200px 25%;
+      /* margin: 200px 25%; */
     }
 
     form {
       background-color: #4654e1;
+      /* width: 500px;
+      height: 44px; */
       border-radius: 5px;
       display: flex;
       flex-direction: row;
@@ -50,10 +52,14 @@
     }
 
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <form role="search" id="form" action="{{ url_for('home') }}" method="post" class="box">
+  <div>
+    <button style="font-size:24px;background: navajowhite;display: flex;width: 127px;height: auto;border-radius: 8px;padding-left: 12px;padding-bottom: 5px;" onclick="location.href='https://github.com/Vinay26k'"><i class="fa fa-github">Vinay26k</i></button>
+  </div>
+  <form role="search" id="form" action="{{ url_for('home') }}" method="post" class="box" style="margin: 200px 35%;"> 
     <input type="search" id="query" name="q-url" placeholder="https://www.slideshare.net/URL_TO_SLIDES"
       aria-label="Search through site content">
     <button type="submit">
@@ -64,6 +70,7 @@
       </svg>
     </button>
   </form>
+ 
 </body>
 
 </html>
